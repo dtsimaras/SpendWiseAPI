@@ -22,6 +22,8 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	runtimeOnly 'org.postgresql:postgresql'
 	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0' // TODO: fix docs or replace with plain OpenApi
+
 }
 
 tasks.named('test') {

@@ -19,6 +19,7 @@ public class BudgetService {
 
     public Budget create(Budget newBudget) {
         Category category = categoryService.findByIdOrElseThrow(newBudget.getCategory().getId());
+        newBudget.setCategory(category);
         return this.budgetRepository.save(newBudget);
     }
 

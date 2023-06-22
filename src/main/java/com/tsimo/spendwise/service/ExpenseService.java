@@ -18,6 +18,7 @@ public class ExpenseService {
 
     public Expense create(Expense newExpense) {
         Category category = categoryService.findByIdOrElseThrow(newExpense.getCategory().getId());
+        newExpense.setCategory(category);
         return this.expenseRepository.save(newExpense);
     }
 

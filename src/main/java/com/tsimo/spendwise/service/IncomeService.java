@@ -18,6 +18,7 @@ public class IncomeService {
 
     public Income create(Income newIncome) {
         Category category = categoryService.findByIdOrElseThrow(newIncome.getCategory().getId());
+        newIncome.setCategory(category);
         return this.incomeRepository.save(newIncome);
     }
 
